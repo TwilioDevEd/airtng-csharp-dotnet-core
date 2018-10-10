@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTNG.Web", "AirTNG.Web\AirTNG.Web.csproj", "{4EB19C7F-2C4F-4661-97ED-4EEB2A2496EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTNG.Web.Tests", "AirTNG.Web.Tests\AirTNG.Web.Tests.csproj", "{3961C546-FD9B-4839-B424-DF3F47584DEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EB19C7F-2C4F-4661-97ED-4EEB2A2496EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB19C7F-2C4F-4661-97ED-4EEB2A2496EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB19C7F-2C4F-4661-97ED-4EEB2A2496EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB19C7F-2C4F-4661-97ED-4EEB2A2496EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3961C546-FD9B-4839-B424-DF3F47584DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3961C546-FD9B-4839-B424-DF3F47584DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3961C546-FD9B-4839-B424-DF3F47584DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3961C546-FD9B-4839-B424-DF3F47584DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

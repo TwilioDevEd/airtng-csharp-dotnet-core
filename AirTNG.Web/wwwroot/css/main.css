@@ -1,0 +1,100 @@
+﻿body {
+  background: url(../images/tngbg.jpg);
+  background-size: cover;
+}
+body footer {
+  text-align: center;
+  /*position: absolute;*/
+  /*bottom: 20px;*/
+  width: 100%;
+}
+
+.container{
+  background-color: white; 
+  /*margin-bottom: 50px;*/
+  padding-bottom: 10px;
+}
+
+.container.transparent{
+  background-color: transparent;
+}
+
+.hero-text {
+  margin: 0px;
+  /*top: 0px;*/
+  /*left: 0px;*/
+  text-align: center;
+  padding: 130px;
+  color: white;
+}
+
+.hero-text.full-page {
+  height: 100%;
+  /*position: absolute;*/
+  width: 100%;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.hero-text p {
+  font-size: 30px;
+}
+
+.hero-text .btn-transparent {
+  background: rgba(255, 255, 255, 0.6);
+  margin: 30px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  border-radius: 0px !important;
+}
+
+.navbar.navbar-transparent {
+  background: transparent;
+  /*position: absolute;*/
+  width: 100%;
+  /*top: 0px;*/
+  z-index: 1020;
+  padding: 20px;
+}
+
+.navbar.navbar-space {
+  background: url(../images/tngbg.jpg);
+  height: 90px;
+}
+
+.navbar .navbar-brand {
+  background: url(../images/airtng-logo.png) no-repeat;
+  padding-left: 40px;
+  color: white;
+  font-size: 32px;
+}
+
+.navbar img {
+  width: 20px;
+}
+
+.navbar li {
+  list-style: none;
+  margin: 10px;
+}
+
+.navbar li a {
+  color: #337ab7 !important;
+  font-size: 14px;
+}
+
+.navbar li a:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+.navbar li a:visited {
+  color: #337ab7 !important;
+}
