@@ -22,7 +22,7 @@ namespace AirTNG.Web.Tests.Controllers
         {
             _mockUserRepository = new Mock<IUserRepository>();
             _mockUserRepository.Setup(u => u.GetUserAsync(It.IsAny<ClaimsPrincipal>()))
-                .ReturnsAsync(new IdentityUser() { Id = "bob-id" });
+                .ReturnsAsync(new ApplicationUser { Id = "bob-id" });
 
             _mockNotifier = new Mock<INotifier>();
             _mockNotifier.Setup(n => n.SendNotificationAsync(It.IsAny<Notification>()))

@@ -17,5 +17,7 @@ namespace AirTNG.Web.Data
         public DbSet<VacationProperty> VacationProperties { get; set; }
 
         public DbSet<Reservation> Reservations { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

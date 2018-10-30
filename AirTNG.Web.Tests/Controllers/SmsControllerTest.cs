@@ -18,7 +18,7 @@ namespace AirTNG.Web.Tests.Controllers
         
         public SmsControllerTest()
         {
-            var host = new IdentityUser() {Id = "bob-id"};
+            var host = new ApplicationUser {Id = "bob-id"};
             _mockApplicationDbRepository = new Mock<IApplicationDbRepository>();
             _mockApplicationDbRepository.Setup(a => a.FindUserByPhoneNumberAsync(It.IsAny<string>()))
                 .ReturnsAsync(host);

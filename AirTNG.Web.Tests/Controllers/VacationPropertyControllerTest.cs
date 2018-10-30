@@ -22,7 +22,7 @@ namespace AirTNG.Web.Tests.Controllers
 
         public VacationPropertyControllerTest()
         {
-            var user = new IdentityUser()
+            var user = new ApplicationUser
             {
                 Id="bob-id"
             };

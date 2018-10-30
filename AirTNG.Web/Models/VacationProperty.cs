@@ -14,7 +14,7 @@ namespace AirTNG.Web.Models
         public DateTime CreatedAt { get; set; }
         
         [ForeignKey("UserId")]
-        public IdentityUser User { get; set; }
+        public ApplicationUser User { get; set; }
 
         public virtual IList<Reservation> Reservations { get; set; }
     }

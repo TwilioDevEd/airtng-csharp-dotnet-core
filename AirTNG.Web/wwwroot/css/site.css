@@ -40,6 +40,9 @@ td {
 #main {
     margin-top:10px;
 }
+#main.push-nav{
+    margin-top: 60px;
+}
 
 #messages p {
     padding:10px;
