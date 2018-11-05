@@ -7,19 +7,19 @@ namespace AirTNG.Web.Models
 
     public interface IUserRepository
     {
-        Task<IdentityUser> GetUserAsync(ClaimsPrincipal user);
+        Task<ApplicationUser> GetUserAsync(ClaimsPrincipal user);
     }
 
     public class UserRepository: IUserRepository
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UserRepository(UserManager<IdentityUser> userManager)
+        public UserRepository(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
 
-        public async Task<IdentityUser> GetUserAsync(ClaimsPrincipal user)
+        public async Task<ApplicationUser> GetUserAsync(ClaimsPrincipal user)
         {
             return await _userManager.GetUserAsync(user);
         }

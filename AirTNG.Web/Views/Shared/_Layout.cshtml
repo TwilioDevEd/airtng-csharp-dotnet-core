@@ -30,7 +30,9 @@
         </div>
     </nav>
     
-    <section id="main" class="container @ViewData["ContainerBackground"]">
+    @RenderSection("hero", false)
+
+    <section id="main" class="push-nav @ViewData["ContainerBackground"]">
         @RenderBody()
     </section>
     

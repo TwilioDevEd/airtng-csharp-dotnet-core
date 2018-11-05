@@ -2,9 +2,11 @@
     ViewData["ContainerBackground"] = "transparent";
     ViewData["Title"] = "Home Page";
 }
-
-<div class="hero-text full-page">
-    <h1>Lodging fit for a captain</h1>
-    <p>The Next Generation of vacation rentals.</p>
-    @Html.ActionLink("View Properties", "Index", "VacationProperty", null, new {@class = "btn btn-transparent btn-lg"})
-</div>
+@section hero
+{
+    <div class="hero-text full-page">
+        <h1>Lodging fit for a captain</h1>
+        <p>The Next Generation of vacation rentals.</p>
+        @Html.ActionLink("View Properties", "Index", "VacationProperty", null, new {@class = "btn btn-transparent btn-lg"})
+    </div>
+}

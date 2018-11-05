@@ -1,59 +1,30 @@
 @using Microsoft.AspNetCore.Identity
 @model IEnumerable<AirTNG.Web.Models.VacationProperty>
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vacation Properties";
 }
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-        @if (UserManager.GetUserId(User) == @item.UserId)
-        {
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        }
-        else
-        {
-            <td>
-                <a asp-action="Create" asp-controller="Reservation" asp-route-id="@item.Id">Create Reservation</a>
-            </td>
-        }
-        </tr>
+@section hero
+{
+    <div class="hero-text">
+        <h1>Lodging fit for a captain</h1>
+        <p>The Next Generation of vacation rentals.</p>
+    </div>
 }
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+    @foreach (var item in Model) {
+        <div class="col-md-4">
+            <a asp-action="Create" asp-controller="Reservation" asp-route-id="@item.Id" class="property">
+                <img src="@item.ImageUrl" alt="Vacation Property" />
+                <h2>@item.Description</h2>
+            </a>
+        </div>
+    }
+    </div>
+</div>

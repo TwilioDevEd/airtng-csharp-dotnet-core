@@ -49,7 +49,7 @@ namespace AirTNG.Web.Tests.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(int id, [Bind("Name,Message,VacationPropertyId")] Reservation reservation)
+        public async Task<IActionResult> Create(int id, [Bind("Message,VacationPropertyId")] Reservation reservation)
         {
             if (id != reservation.VacationPropertyId)
             {
@@ -60,6 +60,7 @@ namespace AirTNG.Web.Tests.Controllers
             {
                 var user = await _userRepository.GetUserAsync(HttpContext.User);
                 reservation.Status = ReservationStatus.Pending;
+                reservation.Name = user.Name;
                 reservation.PhoneNumber = user.PhoneNumber;
                 reservation.CreatedAt = DateTime.Now;
 

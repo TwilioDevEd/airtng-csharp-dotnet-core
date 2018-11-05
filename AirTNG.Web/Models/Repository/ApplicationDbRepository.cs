@@ -22,7 +22,7 @@ namespace AirTNG.Web.Models
         Task<Reservation> FindFirstPendingReservationByHostAsync(string hostId);
         Task<int> UpdateReservationAsync(Reservation reservation);
         
-        Task<IdentityUser> FindUserByPhoneNumberAsync(string number);
+        Task<ApplicationUser> FindUserByPhoneNumberAsync(string number);
     }
 
     public class ApplicationDbRepository : IApplicationDbRepository
@@ -92,9 +92,9 @@ namespace AirTNG.Web.Models
         }
         
         
-        public async Task<IdentityUser> FindUserByPhoneNumberAsync(string number)
+        public async Task<ApplicationUser> FindUserByPhoneNumberAsync(string number)
         {
-            return await _context.Users.FirstAsync(u => u.PhoneNumber == number);
+            return await _context.ApplicationUsers.FirstAsync(u => u.PhoneNumber == number);
         }
 
     }
