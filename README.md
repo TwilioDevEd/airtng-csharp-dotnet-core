@@ -57,9 +57,15 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
 
 7. Check it out at [http://localhost:5000](http://localhost:5000)
 
-That's it!
 
-To let our Twilio Phone number use the callback endpoint we exposed, our development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+
+8. To let our Twilio Phone number use the callback endpoint we exposed, our development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+
+9. Register your webhook with your Twilio Number at `https://www.twilio.com/console/phone-numbers/`. Your webhook url should include the ngrok host from the previous step and should look similar to:
+
+`https://de9b0f66.ngrok.io/sms/handle`
+
+That's it!
 
 ### Run unit tests
 
@@ -76,4 +82,3 @@ To let our Twilio Phone number use the callback endpoint we exposed, our develop
 * No warranty expressed or implied. Software is as is. Diggity.
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
-
