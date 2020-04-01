@@ -2,8 +2,10 @@
   <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
 </a>
 
-
 # AirTNG App: Part 1 - Workflow Automation with Twilio - ASP.NET Core MVC
+> We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
+
+![](https://github.com/TwilioDevEd/airtng-csharp-dotnet-core/workflows/dotNETCore/badge.svg)
 
 Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This example app is a vacation rental site, where the host can confirm a reservation via SMS.
 
@@ -17,7 +19,7 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
 
    Remember that the number where you change the _SMS webhook_ must be the same one you set on the `TwilioPhoneNumber` settings.
 
-   <!--![Configure Voice](http://howtodocs.s3.amazonaws.com/twilio-number-config-all-med.gif)-->
+   ![Configure Messaging](webhook.png)
 
    To start using `ngrok` in our project you'll have execute to the following line in the _command prompt_.
 
@@ -31,7 +33,7 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
    http://<your-ngrok-subdomain>.ngrok.io/Sms/Handle
    ```
 
-2. Clone this repository and `cd` into it.
+1. Clone this repository and `cd` into it.
 
     ```
     git clone git@github.com:TwilioDevEd/airtng-csharp-dotnet-core.git
@@ -39,7 +41,8 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
     cd airtng-csharp-dotnet-core/AirTNG.Web
     ```
 
-3. Create a new file `twilio.json` and update the content.
+1. Create a new file `twilio.json` and update the content.
+
    ```json
    {
      "Twilio": {
@@ -50,21 +53,35 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
    }
    ```
 
-4. Build the solution.
+1. Install [EF Core CLI](https://docs.microsoft.com/en-gb/ef/core/what-is-new/ef-core-3.0/breaking-changes#the-ef-core-command-line-tool-dotnet-ef-is-no-longer-part-of-the-net-core-sdk) if it's not already installed.
 
-5. Run `dotnet ef database update` to create the local DB
+    ```
+    dotnet tool install --global dotnet-ef --version 3.0.0
+    ```
 
-6. Run the application `dotnet run`.
+1. Build the solution.
 
-7. Check it out at [http://localhost:5000](http://localhost:5000)
+    ```
+    dotnet build
+    ```
 
+1. Create the local DB
 
+    ```
+    dotnet ef database update
+    ```
 
-8. To let our Twilio Phone number use the callback endpoint we exposed, our development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+1. Run the application.
 
-9. Register your webhook with your Twilio Number at `https://www.twilio.com/console/phone-numbers/`. Your webhook url should include the ngrok host from the previous step and should look similar to:
+    ```
+    dotnet run
+    ```
 
-`https://de9b0f66.ngrok.io/sms/handle`
+1. Check it out at [http://localhost:5000](http://localhost:5000)
+
+1. To let our Twilio Phone number use the callback endpoint we exposed, our development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+
+1. Register your webhook with your Twilio Number at `https://www.twilio.com/console/phone-numbers/`. Your webhook url should include the ngrok host from the previous step and should look similar to `https://de9b0f66.ngrok.io/sms/handle`.
 
 That's it!
 
@@ -72,14 +89,19 @@ That's it!
 
 1. cd into AirTNG.Web.Tests project
 
-    `cd airtng-csharp-dotnet-core/AirTNG.Web.Tests`
+    ```
+    cd airtng-csharp-dotnet-core/AirTNG.Web.Tests
+    ```
     
-2. Run tests
+1. Run tests
 
-    `dotnet test`
+    ```
+    dotnet test
+    ```
 
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
