@@ -41,17 +41,7 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
     cd airtng-csharp-dotnet-core/AirTNG.Web
     ```
 
-1. Create a new file `twilio.json` and update the content.
-
-   ```json
-   {
-     "Twilio": {
-       "AccountSid": "Your Twilio Account SID",
-       "AuthToken": "Your Twilio Auth Token",
-       "PhoneNumber": "Your Twilio Phone Number"
-     }
-   }
-   ```
+1. Update the file `twilio.json` with your Account SID, Auth Token and Twilio phone number.
 
 1. Install [EF Core CLI](https://docs.microsoft.com/en-gb/ef/core/what-is-new/ef-core-3.0/breaking-changes#the-ef-core-command-line-tool-dotnet-ef-is-no-longer-part-of-the-net-core-sdk) if it's not already installed.
 
