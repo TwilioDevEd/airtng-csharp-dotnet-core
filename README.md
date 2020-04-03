@@ -33,7 +33,7 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
    http://<your-ngrok-subdomain>.ngrok.io/Sms/Handle
    ```
 
-1. Clone this repository and `cd` into it.
+1. Clone this repository and `cd` into `AirTNG.Web` directory.
 
     ```
     git clone git@github.com:TwilioDevEd/airtng-csharp-dotnet-core.git
@@ -65,7 +65,7 @@ Learn how to automate your workflow using Twilio's REST API and Twilio SMS. This
     dotnet build
     ```
 
-1. Create the local DB
+1. Create the local DB. This also should be executed in `AirTNG.Web` directory.
 
     ```
     dotnet ef database update
@@ -87,7 +87,7 @@ That's it!
 
 ### Run unit tests
 
-1. cd into AirTNG.Web.Tests project
+1. cd into `AirTNG.Web.Tests` project
 
     ```
     cd airtng-csharp-dotnet-core/AirTNG.Web.Tests
