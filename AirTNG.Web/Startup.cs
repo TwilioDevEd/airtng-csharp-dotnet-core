@@ -10,6 +10,8 @@ using AirTNG.Web.Domain.Twilio;
 using AirTNG.Web.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 
 namespace AirTNG.Web
 {
@@ -41,7 +43,7 @@ namespace AirTNG.Web
             services.AddScoped<IApplicationDbRepository, ApplicationDbRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddSingleton<INotifier>(new Notifier(
                     Configuration.GetSection("Twilio").Get<TwilioConfiguration>()));
@@ -49,7 +51,7 @@ namespace AirTNG.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -65,13 +67,14 @@ namespace AirTNG.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseRouting();
             app.UseAuthentication();
+            app.UseAuthorization();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
