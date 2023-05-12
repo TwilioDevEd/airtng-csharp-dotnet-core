@@ -18,7 +18,7 @@
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" PrivateAssets="All" />
         <PackageReference Include="Twilio" Version="5.59.0" />
         <PackageReference Include="Twilio.AspNet.Common" Version="5.37.2" />
-        <PackageReference Include="Twilio.AspNet.Core" Version="5.37.2" />
+        <PackageReference Include="Twilio.AspNet.Core" Version="8.0.2" />
     </ItemGroup>
 
     <ItemGroup>
